@@ -17,20 +17,17 @@ public class BookingController {
         this.service = service;
     }
 
-    // 1. Initialize
     @PostMapping("/initialize")
     public String initialize() {
         service.initialize();
         return "Event initialized with 100 seats";
     }
 
-    // 2. Get seats
     @GetMapping("/seats")
     public List<Seat> getSeats() {
         return service.getSeats();
     }
 
-    // 3. Book seats
     @PostMapping("/book")
     public Map<String, Object> bookSeats(@RequestBody Map<String, Object> request) {
 
